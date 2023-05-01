@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <limits.h>
 
 void itoa(int n, char s[]);
@@ -12,7 +11,7 @@ int main(void)
 
     printf("%s\n", s);
 
-    return EXIT_SUCCESS;
+    return 0;
 }
 
 void itoa(int n, char s[])
