@@ -3,7 +3,7 @@
 
 #define MAX_LEN 100
 
-bool strend(char *restrict s, const char *restrict end);
+bool strend(char *restrict s, char *restrict end);
 
 int main(void)
 {
@@ -19,10 +19,14 @@ int main(void)
     printf("First string ends with second string: '%s'\n", strend(s1, s2) ? "True" : "False");
 }
 
-bool strend(char *restrict s, const char *restrict end)
+bool strend(char *restrict s, char *restrict end)
 {
-    while (*s++ || *end++)
-        ;
+    char *start = end;
 
-    return *end == '\0' && *s ;
+    while (*s)
+    {
+        end = *end == *s++ ? end + 1 : start;
+    }
+
+    return *end == '\0';
 }
