@@ -38,4 +38,3 @@ void itoa(int n, char *s)
     *s++ = '0' + n % 10;
     *s = '\0';
 }
-    
