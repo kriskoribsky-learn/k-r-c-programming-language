@@ -25,15 +25,3 @@ void reverse(char *s)
         s[j++] = c;
     }
 }
-{
-    static int i = 0;
-    static int j = 0;
-
-    if (s[i] != '\0')
-    {
-        char c = s[i++];
-        reverse(s);
-
-        s[j++] = c;
-    }
-}
