@@ -10,7 +10,7 @@ int main(void)
     char s[MAX_LEN];
 
     printf("Int to convert to string: ");
-    scanf("%d", n);
+    scanf("%d", &n);
 
     itoa(n, s);
 
@@ -22,17 +22,20 @@ void itoa(int n, char *s)
     if (n < 0)
     {
         *s++ = '-';
+        n *= -1;
     }
 
-    if (n < 10)
+    if (n / 10 != 0)
     {
-        *s++ = '0' + n;
-    } else
-    {
-        itoa(n/10, s);
+        itoa(n / 10, s);
     }
 
+    while (*s != '\0')
+    {
+        *s++;
+    }
 
-
-
+    *s++ = '0' + n % 10;
+    *s = '\0';
 }
+    
