@@ -50,4 +50,10 @@ int readlines(char *lineptr[], int maxlines) /* read input lines */
     return nlines;
 }
 
-
+void writelines(char *lineptr[], int nlines) /* write ouput lines */
+{
+    while (nlines-- > 0)
+    {
+        printf("%s\n", *lineptr++);
+    }
+}
