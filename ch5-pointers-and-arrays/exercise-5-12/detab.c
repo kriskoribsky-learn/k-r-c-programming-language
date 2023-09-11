@@ -45,5 +45,31 @@ int main(int argc, char **argv)
             break;
         }
     }
+
+    /* replace tabs with appropriate number of spaces per line */
+    int c;
+    long line_pos = 0;
+
+    while ((c = getchar()) != EOF)
+    {
+        if (c == '\n')
+        {
+            putchar('\n');
+            line_pos = 0;
+        }
+        else if (c == '\t' && line_pos >= tab_start)
+        {
+            for (int i = 0; i < tab_size; i++)
+            {
+                putchar(' ');
+            }
+        }
+        else
+        {
+            putchar(c);
+            line_pos++;
+        }
+    }
+
     return EXIT_SUCCESS;
 }
