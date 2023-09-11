@@ -46,22 +46,5 @@ int main(int argc, char **argv)
             break;
         }
     }
-
-    // int c;
-    // // while ((c = getchar()) != EOF)
-    // // {
-    // //     if (c == '\t')
-    // //     {
-    // //         for (int i = 0; i < tab_size; i++)
-    // //         {
-    // //             putchar(' ');
-    // //         }
-    // //     }
-    // //     else
-    // //     {
-    // //         putchar(c);
-    // //     }
-    // // }
-
     return EXIT_SUCCESS;
 }
