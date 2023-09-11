@@ -4,7 +4,6 @@
 #define DEFAULT_TAB_SIZE 8  /* Number of spaces the tab '\t' character should represent */
 #define DEFAULT_TAB_START 0 /* Number of spaces to skip before starting replacing '\t' */
 
-/* this routine will take only tab size as optional argument instead of list of tab stops */
 int main(int argc, char **argv)
 {
     long tab_size = DEFAULT_TAB_SIZE;
