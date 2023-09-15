@@ -47,10 +47,7 @@ int main(int argc, char **argv)
     }
 
     /* replace tabs with appropriate number of spaces per line */
-    int c;
-    long column_pos = 0;
-
-    while ((c = getchar()) != EOF)
+    for (int column_pos = 0, c; (c = getchar()) != EOF; column_pos++)
     {
         if (c == '\n')
         {
@@ -67,7 +64,6 @@ int main(int argc, char **argv)
         else
         {
             putchar(c);
-            column_pos++;
         }
     }
 
