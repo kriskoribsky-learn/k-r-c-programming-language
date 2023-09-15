@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define DEFAULT_TAB_SIZE 8 /* Number of spaces the tab '\t' character should represent */
+#define DEFAULT_TAB_SIZE 4 /* Number of spaces the tab '\t' character should represent */
 
 /* this routine will take only tab size as optional argument instead of list of tab stops */
 int main(int argc, char **argv)

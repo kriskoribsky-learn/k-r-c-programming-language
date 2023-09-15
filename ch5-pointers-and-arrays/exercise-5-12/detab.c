@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define DEFAULT_TAB_SIZE 8  /* Number of spaces the tab '\t' character should represent */
+#define DEFAULT_TAB_SIZE 4  /* Number of spaces the tab '\t' character should represent */
 #define DEFAULT_TAB_START 0 /* Number of spaces to skip before starting replacing '\t' */
 
 int main(int argc, char **argv)
 {
     long tab_size = DEFAULT_TAB_SIZE;
-    long tab_start = DEFAULT_TAB_START;
+    long column_start = DEFAULT_TAB_START;
 
     /* read command-line arguments */
     long val;
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
                 exit(EXIT_FAILURE);
             }
 
-            tab_start = val;
+            column_start = val;
             break;
 
         case '+': /* tab start */
@@ -48,16 +48,16 @@ int main(int argc, char **argv)
 
     /* replace tabs with appropriate number of spaces per line */
     int c;
-    long line_pos = 0;
+    long column_pos = 0;
 
     while ((c = getchar()) != EOF)
     {
         if (c == '\n')
         {
             putchar('\n');
-            line_pos = 0;
+            column_pos = 0;
         }
-        else if (c == '\t' && line_pos >= tab_start)
+        else if (c == '\t' && column_pos >= column_start)
         {
             for (int i = 0; i < tab_size; i++)
             {
@@ -67,7 +67,7 @@ int main(int argc, char **argv)
         else
         {
             putchar(c);
-            line_pos++;
+            column_pos++;
         }
     }
 
