@@ -45,5 +45,14 @@ int main(int argc, char **argv)
             break;
         }
     }
+
+    /* replace appropriate number of spaces with tabs */
+    int c;
+    long line_pos = 0, space_pos = 0;
+
+    while ((c = getchar()) != EOF)
+    {
+    }
+
     return EXIT_SUCCESS;
 }
